@@ -1,0 +1,52 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '56931316138@s.whatsapp.net',
+    fromMe: false,
+    id: 'C490EFBF86B6D26FB007051B573C7198',
+    participant: undefined
+  },
+  messageTimestamp: 1723230272,
+  pushName: 'Joyce🌷✨',
+  broadcast: false,
+  message: Message {
+    conversation: 'Porque no',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Porque no',
+  from: '56931316138'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '56931316138@s.whatsapp.net',
+    fromMe: false,
+    id: '3D356B195F365C46DCEE7ADAF00EB0D9',
+    participant: undefined
+  },
+  messageTimestamp: 1723231236,
+  pushName: 'Joyce🌷✨',
+  broadcast: false,
+  message: Message {
+    audioMessage: AudioMessage {
+      url: 'https://mmg.whatsapp.net/v/t62.7117-24/32574500_3631455037165821_6900119783746553502_n.enc?ccb=11-4&oh=01_Q5AaIMDbYhBY-VndMmZNFU8Ih3dHjrvoKXigYVeXb_rItPEo&oe=66DDD815&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'audio/ogg; codecs=opus',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      seconds: 4,
+      ptt: true,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7117-24/32574500_3631455037165821_6900119783746553502_n.enc?ccb=11-4&oh=01_Q5AaIMDbYhBY-VndMmZNFU8Ih3dHjrvoKXigYVeXb_rItPEo&oe=66DDD815&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      waveform: [Uint8Array]
+    },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '_event_voice_note__43e6f836-c4e2-470a-888e-7d2dca203024',
+  from: '56931316138'
+}
