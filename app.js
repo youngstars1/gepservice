@@ -13,13 +13,6 @@ const enlacesPath = path.join(__dirname, "mensajes", "enlaces.txt")
 const enlaces = fs.readFileSync(enlacesPath, "utf8")
 
 
-
-
-
-
-
-
-
 const flowSecundario =  addKeyword(['1', '2', '3', '4', '5']) 
                         .addAnswer(
                        [ '¡Genial! Dejanos tus datos para registrarlo en nuestro sistema',
@@ -31,24 +24,7 @@ const flowSecundario =  addKeyword(['1', '2', '3', '4', '5'])
                             await state.update({ nameu: ctx.body })
                         await flowDynamic('😊Gracias, enseguida un agente te contactara a la brevedad.')
                         }
-                        )/*
-                        .addAnswer(
-                            '¿Cual es tu edad?',
-                            {
-                                capture: true,
-                            },
-                            async (ctx, { flowDynamic, state }) => {
-                                await state.update({ age: ctx.body })
-                                const myState = state.getMyState()
-                               
-                            }
                         )
-                        .addAnswer('Tus datos son:', null, async (_, { flowDynamic, state }) => {
-                            const myState = state.getMyState()
-                           await flowDynamic(`Nombre: ${myState.name} Edad: ${myState.age}`)
-                        })
-                        
-                        .addAnswer('📄Gracias, enseguida un agente te contactara a la brevedad.')*/
 
 
 
@@ -134,13 +110,13 @@ const preguntas = addKeyword(EVENTS.ACTION) .addAnswer(
     }
 )
 .addAnswer(
-    '¿Cual es tu Rut?',
+    '¿Cual es tu Rut, Y tú nombre?',
     {
         capture: true,
     },
     async (ctx, { flowDynamic, state, fallBack }) => {
         if (!ctx.body.includes('-')) {
-            return fallBack('El rut debe ir en ese formato xxxxxxxx-x, intente de nuevo')
+            return fallBack('El rut debe ir en ese formato xxxxxxxx-x y junto al nombre, intente de nuevo')
           }
           else{
             await state.update({ age: ctx.body })
@@ -167,9 +143,9 @@ const preguntas = addKeyword(EVENTS.ACTION) .addAnswer(
         
     }
 )
-.addAnswer( null, async (_, { flowDynamic, state }) => {
+.addAnswer( 'Tus datos son ⬇ ', null, async (_, { flowDynamic, state }) => {
     const myState = state.getMyState()
-   await flowDynamic(`Tus datos son ⬇ \nTrámite: ${myState.name} \n: Rut: ${myState.age}, \nCorreo: ${myState.correo}`)
+   await flowDynamic(`Trámite: ${myState.name} \n: Rut: ${myState.age}, \nCorreo: ${myState.correo}`)
 })
 .addAnswer('😊Gracias, enseguida un agente te contactara a la brevedad.')
 
