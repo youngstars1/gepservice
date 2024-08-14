@@ -71,7 +71,7 @@ const flowTramite = addKeyword(EVENTS.ACTION).addAnswer('*Elige una opción*').a
         '4-Nacionalidad',
         '5-Residencia Temporal',
 
-], null, null, [flowDefinitiva, flowTurista, flowDefinitiva, flowTemporal])
+], null, null, [flowDefinitiva, flowTurista, flowDefinitiva, flowTemporal, familiar])
 
 
 
@@ -151,7 +151,7 @@ const preguntas = addKeyword(EVENTS.ACTION) .addAnswer(
 
 const flowTraducir = addKeyword(EVENTS.ACTION).addAnswer(idioma)
 
-const menuFlow = addKeyword(["Menu", 'menu', 'hola', 'Hola', 'Buenos días', 'buenos dias'])
+const menuFlow = addKeyword(["Menu", 'menu', 'hola', 'Hola', 'Buenos días', 'buenos dias', 'Freo', 'Slt', 'Salut', 'Bonswa', 'Bonjou','Yow', 'Bonjour', 'Sak gen la', 'Bonsoir'])
 
 .addAnswer(
    
@@ -186,12 +186,13 @@ const menuFlow = addKeyword(["Menu", 'menu', 'hola', 'Hola', 'Buenos días', 'bu
     }
 );
 const notaDeVoz = addKeyword(EVENTS.VOICE_NOTE).addAnswer('Por favor, no recibimos nota de voz. ¡¡Escribe lo que desea!!')
-const agradecimientos = addKeyword(['Gracias', ]).addAnswer('¡De nada! 😊 Estoy aquí para ayudarte.')
+const noReconocer = addKeyword(EVENTS.WELCOME).addAnswer(['No logro entender tu mensaje. Estoy aquí para ayudarte, ¿puedes darme más detalles?', 'O escribe *menu*, para lista de tramites'])
+const agradecimientos = addKeyword(['Gracias', 'gr', 'grx']).addAnswer('¡De nada! 😊 Estoy aquí para ayudarte.')
 
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([menuFlow, flowTramite, preguntas, agradecimientos])
+    const adapterFlow = createFlow([menuFlow, flowTramite, preguntas, agradecimientos, noReconocer])
     const adapterProvider   = createProvider(BaileysProvider)
 
     createBot({
