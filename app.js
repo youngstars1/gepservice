@@ -145,7 +145,7 @@ const preguntas = addKeyword(EVENTS.ACTION) .addAnswer(
 )
 .addAnswer( 'Tus datos son ⬇ ', null, async (_, { flowDynamic, state }) => {
     const myState = state.getMyState()
-   await flowDynamic(`Trámite: ${myState.name} \n: Rut: ${myState.age}, \nCorreo: ${myState.correo}`)
+   await flowDynamic(`Trámite: ${myState.name} \nRut: ${myState.age}, \nCorreo: ${myState.correo}`)
 })
 .addAnswer('😊Gracias, enseguida un agente te contactara a la brevedad.')
 
