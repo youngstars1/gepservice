@@ -188,12 +188,7 @@ const menuFlow = addKeyword(["Menu", 'menu', 'hola', 'Hola', 'Buenos días', 'bu
 const horario = addKeyword(['horario', 'ouvè']).addAnswer('Nuestro horario de atención es de lunes a viernes, de 9:00 a.m. a 5:00 p.m., y los sábados de 09:00 a.m. a 3:00 p.m. Los domingos y festivos permanecemos cerrados.')
 const adress = addKeyword(['ubicacion', 'adres', 'dirección', 'direccion','direcion', 'ubicación','adrès', 'kibò local lan ye'])
     .addAnswer(
-        'Nuestras oficinas están ubicadas en Calle Catedral 1009,Piso 7 oficina 708 Santiago, Santiago Metropolitan Region 8320000, Chile',
-        { capture: true},
-        async (ctx, {provider}) => {
-            await provider.sendLocation(ctx.from@s.whatsapp.net, 'https://www.google.com/maps/dir//Catedral+1009,+Piso+7+oficina+708,+Santiago,+Regi%C3%B3n+Metropolitana/@-33.4372409,-70.733885,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x9662c5a482a5ade7:0x72eff75867373b85!2m2!1d-70.6514838!2d-33.4372681?entry=ttu')
-            // el número de telefono se envía en este formato 12345678901@s.whatsapp.net
-        }
+        'Nuestras oficinas están ubicadas en Calle Catedral 1009,Piso 7 oficina 708 Santiago, Santiago Metropolitan Region 8320000, Chile'
     )
 const notaDeVoz = addKeyword(EVENTS.VOICE_NOTE).addAnswer('Por favor, no recibimos nota de voz. ¡¡Escribe lo que desea!!')
 const noReconocer = addKeyword(EVENTS.WELCOME).addAnswer(['No logro entender tu mensaje. Estoy aquí para ayudarte, ¿puedes darme más detalles?', 'O escribe *menu*, para lista de tramites'])
